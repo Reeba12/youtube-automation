@@ -1,3 +1,8 @@
 @echo off
-echo Starting YouTube Automation System...
-.venv\Scripts\python.exe main.py
+echo ================================
+echo YouTube Automation — Local Worker
+echo ================================
+echo Railway handles: scheduling, research, notifications
+echo This handles: script, voice, avatar, video, upload
+echo.
+.venv\Scripts\python.exe worker.py
