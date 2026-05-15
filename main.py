@@ -43,19 +43,19 @@ async def job_research():
 
 
 async def job_check_topic_approved():
-    """Monday 9am EST — Notify if topic approved, local worker picks it up."""
+    """Monday 9am EST — Start pipeline if topic was approved."""
+    from core.notification import is_paused
+    if is_paused():
+        return
     from core.database import get_jobs_by_status
     pending = get_jobs_by_status("topic_approved")
-    if pending:
-        job = pending[0]
-        log.info(f"Topic approved: {job['topic']} — local worker will process")
-        # Local worker (worker.py) polls Supabase and picks this up
-        # Railway just notifies
-        await send(
-            f"Topic approved: {job['topic']}\nStart your laptop worker to begin video production.",
-            title="Start Worker",
-            tags=["laptop"],
-        )
+    if not pending:
+        log.info("No approved topic yet — waiting")
+        return
+    job = pending[0]
+    log.info(f"Topic approved — starting full pipeline for job {job['id']}")
+    from agents.orchestrator import run_pipeline
+    asyncio.create_task(run_pipeline(job["id"]))
 
 
 async def job_analytics_daily():

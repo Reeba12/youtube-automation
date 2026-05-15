@@ -1,8 +1,5 @@
 @echo off
-echo ================================
-echo YouTube Automation — Local Worker
-echo ================================
-echo Railway handles: scheduling, research, notifications
-echo This handles: script, voice, avatar, video, upload
+echo Starting YouTube Automation System...
+echo Run every Monday morning. Keep laptop on. Go to work.
 echo.
-.venv\Scripts\python.exe worker.py
+.venv\Scripts\python.exe main.py
