@@ -1,0 +1,3 @@
+@echo off
+echo Starting YouTube Automation System...
+.venv\Scripts\python.exe main.py

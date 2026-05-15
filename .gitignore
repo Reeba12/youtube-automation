@@ -1,0 +1,55 @@
+# ============================================================
+# SECURITY — never commit these
+# ============================================================
+.env
+data/youtube_client_secrets.json
+data/youtube_token.json
+data/*.db
+
+# ============================================================
+# Generated content — large files, don't commit
+# ============================================================
+temp/
+output/
+logs/
+data/music/
+data/fonts/
+data/avatar/*.png
+data/avatar/*.jpg
+
+# ============================================================
+# Python
+# ============================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+venv/
+.venv/
+env/
+ENV/
+
+# ============================================================
+# OS / Editor
+# ============================================================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ============================================================
+# Models (large files — download separately)
+# ============================================================
+*.onnx
+*.bin
+*.pt
+*.pth
+models/
