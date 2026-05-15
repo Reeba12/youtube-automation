@@ -94,7 +94,7 @@ websockets>=13.0           # required by supabase realtime
 
 # ── Utilities ─────────────────────────────────────────────────
 python-dotenv==1.0.0
-colorlog==6.8.2
+colorlog>=6.9.0
 aiofiles==23.2.1
 
 # ── Future upgrade (when GPU available) ───────────────────────

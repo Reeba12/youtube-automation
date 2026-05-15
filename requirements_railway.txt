@@ -1,0 +1,46 @@
+# ============================================================
+# Railway deployment — lightweight only
+# Heavy packages (torch, whisper, moviepy, diffusers) run locally
+# Railway handles: scheduling, research, notifications, DB, SEO, upload
+# ============================================================
+
+# AI Brain
+groq>=0.11.0
+anthropic>=0.50.0
+
+# Orchestration
+langgraph==1.2.0
+langgraph-checkpoint-sqlite==3.1.0
+
+# Scheduling
+apscheduler==3.10.4
+pytz==2024.1
+
+# Database
+supabase==2.30.0
+websockets>=13.0
+
+# Notifications (ntfy uses requests only)
+requests==2.31.0
+httpx==0.27.0
+
+# Research
+pytrends==4.9.2
+newsapi-python==0.2.7
+
+# YouTube / Google APIs
+google-api-python-client==2.131.0
+google-auth-oauthlib==1.2.0
+google-auth-httplib2==0.2.0
+
+# Financial Data
+alpha-vantage==3.0.0
+
+# Analytics / Data
+pandas==2.2.2
+numpy>=1.26.4
+
+# Utilities
+python-dotenv==1.0.0
+colorlog>=6.9.0
+aiofiles==23.2.1
